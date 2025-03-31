@@ -14,16 +14,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 212 100% 45%;
+    --primary: 265 89% 59%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 180 70% 40%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 213 94% 68%;
+    --accent: 172 68% 50%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -109,6 +109,26 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-brand-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-brand-600 to-teal-500;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-r from-purple-600 via-brand-600 to-teal-500;
+  }
+
+  .gradient-border {
+    @apply border border-transparent bg-gradient-to-r from-purple-600 via-brand-600 to-teal-500 bg-clip-border;
+  }
+
+  .floating-shape {
+    @apply absolute opacity-70 animate-float;
+  }
+
+  .spin-shape {
+    @apply absolute opacity-70 animate-spin-slow;
+  }
+
+  .pulse-shape {
+    @apply absolute opacity-70 animate-pulse-slow;
   }
 }
