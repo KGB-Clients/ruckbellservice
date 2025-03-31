@@ -15,8 +15,7 @@ const ContactInfo = () => {
             <Phone className="h-5 w-5 text-primary" />
           </div>
           <div>
-            <p className="font-medium">Phone</p>
-            <p className="text-gray-600">+91 866-7680320</p>
+           
           </div>
         </div>
         <div className="flex items-center gap-3">
