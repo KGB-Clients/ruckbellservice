@@ -7,7 +7,6 @@ interface ContactCardProps {
   formData: {
     name: string;
     email: string;
-    phone: string;
     company: string;
     message: string;
     service: string;
@@ -20,7 +19,7 @@ interface ContactCardProps {
 const ContactCard = ({ formData, handleChange, handleSubmit, isSubmitting }: ContactCardProps) => {
   return (
     <Card className="animate-fade-up relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-tr from-purple-50 via-transparent to-teal-50 opacity-50"></div>
+      <div className="absolute inset-0 bg-gradient-to-tr from-gray-50 via-transparent to-gray-50 opacity-50"></div>
       <CardHeader className="relative">
         <CardTitle>Get In Touch</CardTitle>
         <CardDescription>

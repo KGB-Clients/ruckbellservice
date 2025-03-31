@@ -11,34 +11,34 @@ export type Database = {
     Tables: {
       contact_form: {
         Row: {
-          "Company Name": string | null
+          "Company Name": string
           created_at: string
-          Email: string | null
-          "Full Name": string | null
+          Email: string
+          "Full Name": string
           id: number
           "Phone Number": number | null
-          "Service Interested In": string | null
-          "Your Message": string | null
+          "Service Interested In": string
+          "Your Message": string
         }
         Insert: {
-          "Company Name"?: string | null
+          "Company Name": string
           created_at?: string
-          Email?: string | null
-          "Full Name"?: string | null
+          Email: string
+          "Full Name": string
           id?: number
           "Phone Number"?: number | null
-          "Service Interested In"?: string | null
-          "Your Message"?: string | null
+          "Service Interested In": string
+          "Your Message": string
         }
         Update: {
-          "Company Name"?: string | null
+          "Company Name"?: string
           created_at?: string
-          Email?: string | null
-          "Full Name"?: string | null
+          Email?: string
+          "Full Name"?: string
           id?: number
           "Phone Number"?: number | null
-          "Service Interested In"?: string | null
-          "Your Message"?: string | null
+          "Service Interested In"?: string
+          "Your Message"?: string
         }
         Relationships: []
       }

@@ -10,7 +10,6 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
     company: '',
     message: '',
     service: 'Not specified'
@@ -29,9 +28,6 @@ const ContactForm = () => {
     try {
       console.log('Submitting form data:', formData);
       
-      // Ensure phone is properly formatted for numeric column
-      const phoneValue = formData.phone ? parseFloat(formData.phone.replace(/[^\d.-]/g, '')) || null : null;
-      
       // Insert data into Supabase contact_form table
       const { error } = await supabase
         .from('contact_form')
@@ -39,7 +35,6 @@ const ContactForm = () => {
           { 
             "Full Name": formData.name,
             "Email": formData.email,
-            "Phone Number": phoneValue,
             "Company Name": formData.company,
             "Your Message": formData.message,
             "Service Interested In": formData.service
@@ -61,7 +56,6 @@ const ContactForm = () => {
       setFormData({
         name: '',
         email: '',
-        phone: '',
         company: '',
         message: '',
         service: 'Not specified'

@@ -9,7 +9,6 @@ interface ContactFormFieldsProps {
   formData: {
     name: string;
     email: string;
-    phone: string;
     company: string;
     message: string;
     service: string;
@@ -34,31 +33,18 @@ const ContactFormFields = ({ formData, handleChange, handleSubmit, isSubmitting 
           className="border-gray-300 focus:border-primary"
         />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="space-y-2">
-          <Label htmlFor="email">Email</Label>
-          <Input 
-            id="email" 
-            name="email" 
-            type="email" 
-            value={formData.email} 
-            onChange={handleChange} 
-            placeholder="john@company.com" 
-            required 
-            className="border-gray-300 focus:border-primary"
-          />
-        </div>
-        <div className="space-y-2">
-          <Label htmlFor="phone">Phone Number</Label>
-          <Input 
-            id="phone" 
-            name="phone" 
-            value={formData.phone} 
-            onChange={handleChange} 
-            placeholder="+1 (555) 000-0000" 
-            className="border-gray-300 focus:border-primary"
-          />
-        </div>
+      <div className="space-y-2">
+        <Label htmlFor="email">Email</Label>
+        <Input 
+          id="email" 
+          name="email" 
+          type="email" 
+          value={formData.email} 
+          onChange={handleChange} 
+          placeholder="john@company.com" 
+          required 
+          className="border-gray-300 focus:border-primary"
+        />
       </div>
       <div className="space-y-2">
         <Label htmlFor="company">Company Name</Label>
