@@ -8,10 +8,19 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { useToast } from "@/components/ui/use-toast";
 import { createClient } from '@supabase/supabase-js';
 
-// Initialize Supabase client
-const supabaseUrl = 'YOUR_SUPABASE_URL'; // Replace with your actual Supabase URL
-const supabaseAnonKey = 'YOUR_SUPABASE_ANON_KEY'; // Replace with your actual Supabase anonymous key
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
+// Initialize Supabase client conditionally
+let supabase = null;
+try {
+  // Only initialize if both URL and key are valid
+  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
+  const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+  
+  if (supabaseUrl && supabaseAnonKey) {
+    supabase = createClient(supabaseUrl, supabaseAnonKey);
+  }
+} catch (error) {
+  console.error('Error initializing Supabase client:', error);
+}
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -35,6 +44,16 @@ const ContactForm = () => {
     setIsSubmitting(true);
     
     try {
+      if (!supabase) {
+        // Handle the case when Supabase is not initialized
+        toast({
+          title: "Configuration needed",
+          description: "Supabase connection is not configured. Please set up your environment variables.",
+          variant: "destructive",
+        });
+        return;
+      }
+      
       // Insert data into Supabase table
       const { error } = await supabase
         .from('contacts') // Replace with your actual table name
@@ -205,6 +224,12 @@ const ContactForm = () => {
                 <Button type="submit" className="w-full gradient-bg hover:opacity-90" disabled={isSubmitting}>
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
+                
+                {!supabase && (
+                  <p className="text-sm text-amber-600 text-center mt-2">
+                    Note: Supabase not configured. Please set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.
+                  </p>
+                )}
               </form>
             </CardContent>
           </Card>
