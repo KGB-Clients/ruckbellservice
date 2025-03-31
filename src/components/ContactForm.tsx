@@ -27,6 +27,11 @@ const ContactForm = () => {
     setIsSubmitting(true);
     
     try {
+      console.log('Submitting form data:', formData);
+      
+      // Ensure phone is properly formatted for numeric column
+      const phoneValue = formData.phone ? parseFloat(formData.phone.replace(/[^\d.-]/g, '')) || null : null;
+      
       // Insert data into Supabase contact_form table
       const { error } = await supabase
         .from('contact_form')
@@ -34,15 +39,19 @@ const ContactForm = () => {
           { 
             "Full Name": formData.name,
             "Email": formData.email,
-            "Phone Number": formData.phone ? parseFloat(formData.phone) : null,
+            "Phone Number": phoneValue,
             "Company Name": formData.company,
             "Your Message": formData.message,
             "Service Interested In": formData.service
           }
         ]);
         
-      if (error) throw error;
+      if (error) {
+        console.error('Supabase error:', error);
+        throw error;
+      }
       
+      console.log('Form submitted successfully');
       toast({
         title: "Message sent successfully!",
         description: "We'll get back to you within 24 hours.",
