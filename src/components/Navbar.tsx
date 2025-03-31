@@ -7,14 +7,14 @@ const Navbar = () => {
     <header className="w-full border-b bg-background/90 backdrop-blur-sm fixed top-0 z-50">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="text-2xl font-bold text-brand-700">Ruckbell</span>
+          <span className="text-2xl font-bold text-gray-700">Ruckbell</span>
           <span className="text-2xl font-light">Services</span>
         </div>
         <nav className="hidden md:flex items-center gap-6">
-          <a href="#services" className="text-sm font-medium hover:text-brand-600 transition-colors">Services</a>
-          <a href="#why-us" className="text-sm font-medium hover:text-brand-600 transition-colors">Why Us</a>
-          <a href="#results" className="text-sm font-medium hover:text-brand-600 transition-colors">Results</a>
-          <a href="#contact" className="text-sm font-medium hover:text-brand-600 transition-colors">Contact</a>
+          <a href="#services" className="text-sm font-medium hover:text-gray-600 transition-colors">Services</a>
+          <a href="#why-us" className="text-sm font-medium hover:text-gray-600 transition-colors">Why Us</a>
+          <a href="#results" className="text-sm font-medium hover:text-gray-600 transition-colors">Results</a>
+          <a href="#contact" className="text-sm font-medium hover:text-gray-600 transition-colors">Contact</a>
         </nav>
         <Button asChild className="hidden md:inline-flex" size="sm">
           <a href="#contact">Get Started</a>

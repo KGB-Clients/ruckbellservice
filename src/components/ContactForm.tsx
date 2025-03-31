@@ -12,7 +12,7 @@ const ContactForm = () => {
     email: '',
     company: '',
     message: '',
-    service: 'Not specified'
+    service: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -58,7 +58,7 @@ const ContactForm = () => {
         email: '',
         company: '',
         message: '',
-        service: 'Not specified'
+        service: ''
       });
     } catch (error) {
       console.error('Error submitting form:', error);

@@ -30,7 +30,7 @@ const ContactFormFields = ({ formData, handleChange, handleSubmit, isSubmitting 
           onChange={handleChange} 
           placeholder="John Doe" 
           required 
-          className="border-gray-300 focus:border-primary"
+          className="border-gray-300 focus:border-gray-600"
         />
       </div>
       <div className="space-y-2">
@@ -43,7 +43,7 @@ const ContactFormFields = ({ formData, handleChange, handleSubmit, isSubmitting 
           onChange={handleChange} 
           placeholder="john@company.com" 
           required 
-          className="border-gray-300 focus:border-primary"
+          className="border-gray-300 focus:border-gray-600"
         />
       </div>
       <div className="space-y-2">
@@ -54,7 +54,8 @@ const ContactFormFields = ({ formData, handleChange, handleSubmit, isSubmitting 
           value={formData.company} 
           onChange={handleChange} 
           placeholder="Your Company" 
-          className="border-gray-300 focus:border-primary"
+          required
+          className="border-gray-300 focus:border-gray-600"
         />
       </div>
       <div className="space-y-2">
@@ -64,9 +65,10 @@ const ContactFormFields = ({ formData, handleChange, handleSubmit, isSubmitting 
           name="service" 
           value={formData.service} 
           onChange={handleChange}
-          className="w-full h-10 px-3 py-2 bg-background border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          required
+          className="w-full h-10 px-3 py-2 bg-background border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-transparent"
         >
-          <option>Not specified</option>
+          <option value="">Select a service</option>
           <option>Paid Media Marketing</option>
           <option>Performance Marketing</option>
           <option>Google My Business</option>
@@ -83,10 +85,10 @@ const ContactFormFields = ({ formData, handleChange, handleSubmit, isSubmitting 
           onChange={handleChange} 
           placeholder="Tell us about your marketing goals" 
           rows={4} 
-          className="border-gray-300 focus:border-primary"
+          className="border-gray-300 focus:border-gray-600"
         />
       </div>
-      <Button type="submit" className="w-full gradient-bg hover:opacity-90" disabled={isSubmitting}>
+      <Button type="submit" className="w-full bg-gray-700 hover:bg-gray-800 text-white" disabled={isSubmitting}>
         {isSubmitting ? "Sending..." : "Send Message"}
       </Button>
     </form>

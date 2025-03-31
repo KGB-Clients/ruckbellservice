@@ -15,25 +15,25 @@ const Stats = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <Card className="border-0 shadow-md animate-fade-up">
             <CardContent className="p-6 text-center">
-              <div className="text-4xl font-bold text-brand-600 mb-2">250%</div>
+              <div className="text-4xl font-bold text-gray-600 mb-2">250%</div>
               <p className="text-sm text-muted-foreground">Average increase in ROAS</p>
             </CardContent>
           </Card>
           <Card className="border-0 shadow-md animate-fade-up animation-delay-100">
             <CardContent className="p-6 text-center">
-              <div className="text-4xl font-bold text-brand-600 mb-2">40%</div>
+              <div className="text-4xl font-bold text-gray-600 mb-2">40%</div>
               <p className="text-sm text-muted-foreground">Lower cost per acquisition</p>
             </CardContent>
           </Card>
           <Card className="border-0 shadow-md animate-fade-up animation-delay-200">
             <CardContent className="p-6 text-center">
-              <div className="text-4xl font-bold text-brand-600 mb-2">85%</div>
+              <div className="text-4xl font-bold text-gray-600 mb-2">85%</div>
               <p className="text-sm text-muted-foreground">Client retention rate</p>
             </CardContent>
           </Card>
           <Card className="border-0 shadow-md animate-fade-up animation-delay-300">
             <CardContent className="p-6 text-center">
-              <div className="text-4xl font-bold text-brand-600 mb-2">100+</div>
+              <div className="text-4xl font-bold text-gray-600 mb-2">100+</div>
               <p className="text-sm text-muted-foreground">Businesses scaled</p>
             </CardContent>
           </Card>

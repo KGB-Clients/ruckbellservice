@@ -12,7 +12,7 @@ const ContactInfo = () => {
       <div className="space-y-4">
         <div className="flex items-center gap-3">
           <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-2 rounded-full">
-            <Mail className="h-5 w-5 text-primary" />
+            <Mail className="h-5 w-5 text-gray-700" />
           </div>
           <div>
             <p className="font-medium">Email</p>
