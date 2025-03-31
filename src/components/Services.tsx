@@ -2,6 +2,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const Services = () => {
   const services = [
@@ -14,7 +15,7 @@ const Services = () => {
         "Transparent reporting with clear ROI metrics"
       ],
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-brand-600"><path d="M4 9h8" /><path d="M20 15h-8" /><circle cx="12" cy="9" r="2" /><circle cx="12" cy="15" r="2" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-primary"><path d="M4 9h8" /><path d="M20 15h-8" /><circle cx="12" cy="9" r="2" /><circle cx="12" cy="15" r="2" /></svg>
       )
     },
     {
@@ -26,7 +27,7 @@ const Services = () => {
         "Comprehensive analytics dashboard"
       ],
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-brand-600"><path d="M22 12h-4l-3 9L9 3l-3 9H2" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-primary"><path d="M22 12h-4l-3 9L9 3l-3 9H2" /></svg>
       )
     },
     {
@@ -38,7 +39,7 @@ const Services = () => {
         "Boost in-store or service-area traffic"
       ],
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-brand-600"><circle cx="12" cy="12" r="10" /><path d="m9 12 2 2 4-4" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-primary"><circle cx="12" cy="12" r="10" /><path d="m9 12 2 2 4-4" /></svg>
       )
     },
     {
@@ -50,7 +51,7 @@ const Services = () => {
         "Quick turnaround for campaign assets"
       ],
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-brand-600"><path d="M12 19c.5 0 1-.1 1.46-.27A7.5 7.5 0 0 0 19 12.74V11a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v1h-1.5A1.5 1.5 0 0 0 8 13.5V16h2" /><path d="M16 10h-4a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2z" /><circle cx="12" cy="19" r="2" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-primary"><path d="M12 19c.5 0 1-.1 1.46-.27A7.5 7.5 0 0 0 19 12.74V11a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v1h-1.5A1.5 1.5 0 0 0 8 13.5V16h2" /><path d="M16 10h-4a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2z" /><circle cx="12" cy="19" r="2" /></svg>
       )
     }
   ];
@@ -59,28 +60,28 @@ const Services = () => {
     <section className="py-16" id="services">
       <div className="container px-4 md:px-6">
         <div className="text-center mb-10">
-          <h2 className="mb-3">Services That Drive Measurable Results</h2>
+          <h2 className="mb-3 text-primary">Services That Drive Measurable Results</h2>
           <p className="text-muted-foreground max-w-[700px] mx-auto">
             Data-driven marketing strategies customized to your business goals and target audience.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {services.map((service, index) => (
-            <Card key={index} className="border shadow-md hover:shadow-lg transition-all animate-fade-up" style={{ animationDelay: `${index * 100}ms` }}>
+            <Card key={index} className="border bg-white/80 backdrop-blur-sm shadow-md hover:shadow-lg transition-all animate-fade-up" style={{ animationDelay: `${index * 100}ms` }}>
               <CardHeader className="flex flex-row items-start gap-4 pb-2">
-                <div className="mt-1">{service.icon}</div>
+                <div className="mt-1 p-2 rounded-full bg-primary/10">{service.icon}</div>
                 <div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                  <CardTitle className="text-xl text-primary">{service.title}</CardTitle>
                   <CardDescription className="mt-2">{service.description}</CardDescription>
                 </div>
               </CardHeader>
               <CardContent>
                 <div className="mt-2">
-                  <h4 className="font-medium text-sm mb-2">Key Benefits:</h4>
+                  <h4 className="font-medium text-sm mb-2 text-secondary">Key Benefits:</h4>
                   <ul className="space-y-1">
                     {service.benefits.map((benefit, i) => (
                       <li key={i} className="flex items-center gap-2 text-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-green-500"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-secondary"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                         <span>{benefit}</span>
                       </li>
                     ))}
@@ -91,8 +92,11 @@ const Services = () => {
           ))}
         </div>
         <div className="mt-10 text-center">
-          <Button className="text-base" asChild>
-            <a href="#contact">Request Service Details</a>
+          <Button className="text-base gradient-bg hover:opacity-90 transition-opacity group" asChild>
+            <a href="#contact" className="flex items-center gap-2">
+              Request Service Details
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
           </Button>
         </div>
       </div>
