@@ -13,11 +13,7 @@ const ContactInfo = () => {
         <div className="flex items-center gap-3">
           <div className="bg-gradient-to-br from-purple-100 to-brand-100 p-2 rounded-full">
             <Phone className="h-5 w-5 text-primary" />
-          </div>
-          <div>
-           
-          </div>
-        </div>
+
         <div className="flex items-center gap-3">
           <div className="bg-gradient-to-br from-brand-100 to-teal-100 p-2 rounded-full">
             <Mail className="h-5 w-5 text-primary" />
