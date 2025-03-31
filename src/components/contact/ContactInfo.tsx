@@ -9,10 +9,7 @@ const ContactInfo = () => {
       <p className="text-gray-600 mb-6">
         Fill out the form to schedule your free consultation. Our experts will analyze your current marketing efforts and create a customized strategy to help you achieve your business goals.
       </p>
-      <div className="space-y-4">
-        <div className="flex items-center gap-3">
-          <div className="bg-gradient-to-br from-purple-100 to-brand-100 p-2 rounded-full">
-            <Phone className="h-5 w-5 text-primary" />
+
 
         <div className="flex items-center gap-3">
           <div className="bg-gradient-to-br from-brand-100 to-teal-100 p-2 rounded-full">
