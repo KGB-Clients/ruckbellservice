@@ -6,21 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/components/ui/use-toast";
-import { createClient } from '@supabase/supabase-js';
-
-// Initialize Supabase client conditionally
-let supabase = null;
-try {
-  // Only initialize if both URL and key are valid
-  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
-  const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
-  
-  if (supabaseUrl && supabaseAnonKey) {
-    supabase = createClient(supabaseUrl, supabaseAnonKey);
-  }
-} catch (error) {
-  console.error('Error initializing Supabase client:', error);
-}
+import { supabase } from '@/integrations/supabase/client';
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -44,28 +30,17 @@ const ContactForm = () => {
     setIsSubmitting(true);
     
     try {
-      if (!supabase) {
-        // Handle the case when Supabase is not initialized
-        toast({
-          title: "Configuration needed",
-          description: "Supabase connection is not configured. Please set up your environment variables.",
-          variant: "destructive",
-        });
-        return;
-      }
-      
-      // Insert data into Supabase table
+      // Insert data into Supabase contact_form table
       const { error } = await supabase
-        .from('contacts') // Replace with your actual table name
+        .from('contact_form')
         .insert([
           { 
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone,
-            company: formData.company,
-            message: formData.message,
-            service: formData.service,
-            created_at: new Date().toISOString()
+            "Full Name": formData.name,
+            "Email": formData.email,
+            "Phone Number": formData.phone ? parseFloat(formData.phone) : null,
+            "Company Name": formData.company,
+            "Your Message": formData.message,
+            "Service Interested In": formData.service
           }
         ]);
         
@@ -224,12 +199,6 @@ const ContactForm = () => {
                 <Button type="submit" className="w-full gradient-bg hover:opacity-90" disabled={isSubmitting}>
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
-                
-                {!supabase && (
-                  <p className="text-sm text-amber-600 text-center mt-2">
-                    Note: Supabase not configured. Please set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.
-                  </p>
-                )}
               </form>
             </CardContent>
           </Card>
